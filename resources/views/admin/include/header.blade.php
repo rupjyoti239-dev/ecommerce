@@ -21,9 +21,14 @@
 
     <!-- Custom Theme Style -->
     <link href="{{ asset('build/css/custom.min.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/custom/style.css') }}">
 
     {{-- font awesome --}}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
+
+  
+
+    
 </head>
 
 <body class="nav-md">
@@ -80,26 +85,23 @@
                     <div class="nav toggle">
                         <a id="menu_toggle"><i class="fa fa-bars"></i></a>
                     </div>
-                    <nav class="nav navbar-nav">
-                        <ul class=" navbar-right">
-                            <li class="nav-item dropdown open" style="padding-left: 15px;">
-                                <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true"
-                                    id="navbarDropdown" data-toggle="dropdown" aria-expanded="false">
-                                    <img src="{{ asset('images/img.jpg') }}" alt="">{{ Auth::guard('admin')->user()->name }}
-                                </a>
-                                <div class="dropdown-menu dropdown-usermenu pull-right"
-                                    aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="javascript:;"> Profile</a>
-
-                                    <form method="post" action="{{ route('admin.logout') }}">
-                                        @csrf
-                                        <button type="submit">Logout</button>
-                                    </form>
-                                </div>
-                            </li>
-
-                        </ul>
-                    </nav>
+                   <nav class="nav navbar-nav">
+                    <ul class="navbar-right">
+                        <li class="nav-item dropdown open" style="padding-left: 15px;">
+                            <a href="javascript:;" class="user-profile dropdown-toggle" aria-haspopup="true" id="navbarDropdown"
+                                data-toggle="dropdown" aria-expanded="false">
+                                <img src="{{ asset('images/img.jpg') }}" alt="">{{ Auth::guard('admin')->user()->name }}
+                            </a>
+                            <div class="dropdown-menu dropdown-usermenu pull-right" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="javascript:;" style="font-size: 14px"> Profile</a>
+                                <form method="post" action="{{ route('admin.logout') }}" class="px-3 py-2">
+                                    @csrf
+                                    <button type="submit" style="background-color: rgb(245, 49, 49); border: none;color: white;padding: 2px 5px;">Logout <i class="fa-solid fa-right-from-bracket"></i></button>
+                                </form>
+                            </div>
+                        </li>
+                    </ul>
+                </nav>
                 </div>
             </div>
             <!-- /top navigation -->

@@ -30,7 +30,7 @@ class LoginController extends Controller
             return redirect()->route('admin.dashboard');
         }
 
-        return back()->withInput($request->only('email', 'remember'))->with('error', 'Username or password incorrect');
+        return redirect()->route('admin.login.form')->with('error', 'Username or password incorrect');
     }
 
 

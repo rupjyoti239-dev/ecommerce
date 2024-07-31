@@ -26,11 +26,14 @@
 
 <body class="login">
   <div>
-    
+
 
     <div style="width:35%; margin: 200px auto">
-      <div  style="background-color: rgb(205, 233, 246); padding: 10px 30px;">
+      <div style="background-color: rgb(205, 233, 246); padding: 10px 30px;">
+
         <section class="login_content">
+       
+
           <form action="{{ route('admin.login') }}" method="POST">
             @csrf
             <h1>Admin Login Form</h1>
@@ -46,6 +49,7 @@
 
             <div class="clearfix"></div>
           </form>
+          
         </section>
       </div>
     </div>
